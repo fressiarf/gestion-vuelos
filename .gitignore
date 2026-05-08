@@ -1,9 +1,8 @@
-# --- Dependencias ---
+
 node_modules/
 back_end/node_modules/
 front_end/node_modules/
 
-# --- Variables de Entorno y Secretos ---
 .env
 .env.local
 .env.development.local
@@ -12,13 +11,11 @@ front_end/node_modules/
 *.env
 !.env.example
 
-# --- Compilación y Salida ---
 dist/
 dist-ssr/
 build/
 *.tsbuildinfo
 
-# --- Logs y Depuración ---
 logs
 *.log
 npm-debug.log*
@@ -27,12 +24,11 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-# --- Pruebas y Cobertura ---
 coverage/
 *.lcov
 
 
-# --- Archivos del Sistema y Editores ---
+
 .DS_Store
 Thumbs.db
 .vscode/*
@@ -46,7 +42,7 @@ Thumbs.db
 *.sln
 *.sw?
 
-# --- Herramientas de IA y Temporales ---
+
 .gemini/
 .agent/
 agent.md

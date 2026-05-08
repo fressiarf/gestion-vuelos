@@ -1,6 +1,5 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../config/config');
-
 const Tripulacion = sequelize.define('Tripulacion', {
   id_tripulacion: {
     type: DataTypes.INTEGER,
@@ -24,5 +23,4 @@ const Tripulacion = sequelize.define('Tripulacion', {
   tableName: 'Tripulacion',
   timestamps: true
 });
-
 module.exports = Tripulacion;

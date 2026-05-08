@@ -1,0 +1,10 @@
+const express = require('express');
+const router = express.Router();
+const vueloController = require('../controllers/vueloController');
+const { verifyToken, isAdmin } = require('../middlewares/authMiddleware');
+router.get('/', vueloController.getAllVuelos);
+router.get('/:id', vueloController.getVueloById);
+router.post('/', verifyToken, isAdmin, vueloController.createVuelo);
+router.put('/:id', verifyToken, isAdmin, vueloController.updateVuelo);
+router.delete('/:id', verifyToken, isAdmin, vueloController.deleteVuelo);
+module.exports = router;

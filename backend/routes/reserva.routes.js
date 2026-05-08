@@ -1,0 +1,10 @@
+const express = require('express');
+const router = express.Router();
+const reservaController = require('../controllers/reservaController');
+const { verifyToken, isAdmin, isCliente } = require('../middlewares/authMiddleware');
+router.get('/', verifyToken, isAdmin, reservaController.getAllReservas);
+router.get('/mis-reservas', verifyToken, isCliente, reservaController.getMisReservas);
+router.get('/:id', verifyToken, reservaController.getReservaById);
+router.post('/', verifyToken, isCliente, reservaController.createReserva);
+router.put('/:id/cancelar', verifyToken, reservaController.cancelarReserva);
+module.exports = router;

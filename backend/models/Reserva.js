@@ -1,6 +1,5 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../config/config');
-
 const Reserva = sequelize.define('Reserva', {
   id_reserva: {
     type: DataTypes.INTEGER,
@@ -39,12 +38,10 @@ const Reserva = sequelize.define('Reserva', {
   hooks: {
     beforeCreate: (reserva, options) => {
       if (!reserva.codigo_reserva) {
-        // Genera un código único alfanumérico, ej: RES-X89J
         const randomString = Math.random().toString(36).substring(2, 6).toUpperCase();
         reserva.codigo_reserva = `RES-${randomString}`;
       }
     }
   }
 });
-
 module.exports = Reserva;

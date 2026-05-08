@@ -1,6 +1,5 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../config/config');
-
 const Aeropuerto = sequelize.define('Aeropuerto', {
   id_aeropuerto: {
     type: DataTypes.INTEGER,
@@ -24,5 +23,4 @@ const Aeropuerto = sequelize.define('Aeropuerto', {
   tableName: 'Aeropuertos',
   timestamps: true
 });
-
 module.exports = Aeropuerto;
